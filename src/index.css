@@ -2,152 +2,107 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ATOM Playbook Design System - Clean, modern, spacious with electric blue accent */
+/* ATOM Playbook Design System - Dark-first, Trust-focused */
 
 @layer base {
   :root {
-    /* Base palette - clean neutrals */
-    --background: 0 0% 99%;
-    --foreground: 240 10% 9%;
+    /* Dark-first palette */
+    --bg: 11 13 16; /* #0B0D10 */
+    --card: 17 20 24; /* #111418 */
+    --muted: 22 26 32; /* #161A20 */
+    --text: 230 234 242; /* #E6EAF2 */
+    --text-muted: 148 163 184; /* #94A3B8 */
+    --border: 30 37 45; /* #1E252D */
     
-    /* Surface colors */
-    --surface: 0 0% 100%;
-    --surface-elevated: 240 6% 98%;
-    --surface-hover: 240 6% 96%;
+    /* Accent colors */
+    --accent: 255 92 58; /* #FF5C3A */
+    --accent-hover: 239 68 68; /* #EF4444 */
     
-    /* Text hierarchy */
-    --text-primary: 240 10% 9%;
-    --text-secondary: 240 6% 48%;
-    --text-muted: 240 5% 64%;
-    --text-subtle: 240 4% 84%;
+    /* Category colors */
+    --staking: 92 124 250; /* #5C7CFA */
+    --liquid-staking: 34 184 207; /* #22B8CF */  
+    --liquidity: 102 217 163; /* #66D9A3 */
+    --lending: 245 194 79; /* #F5C24F */
+    --perps: 241 118 118; /* #F17676 */
     
-    /* Electric blue accent system */
-    --electric: 217 91% 60%;
-    --electric-bright: 217 100% 65%;
-    --electric-dim: 217 85% 55%;
-    --electric-subtle: 217 85% 96%;
-    --electric-glow: 217 91% 60%;
+    /* Risk chip colors */
+    --risk-unbonding: 140 124 246; /* #8C7CF6 */
+    --risk-il: 255 177 85; /* #FFB155 */
+    --risk-liquidation: 255 107 107; /* #FF6B6B */
+    --risk-contract: 148 163 184; /* #94A3B8 */
+    --risk-oracle: 80 194 229; /* #50C2E5 */
     
-    /* Semantic colors */
-    --success: 142 71% 45%;
-    --success-subtle: 142 76% 96%;
-    --warning: 38 92% 50%;
-    --warning-subtle: 38 100% 96%;
-    --error: 0 84% 60%;
-    --error-subtle: 0 93% 96%;
+    /* Status colors */
+    --success: 34 197 94; /* #22C55E */
+    --warning: 245 158 11; /* #F59E0B */
+    --error: 239 68 68; /* #EF4444 */
     
     /* Component tokens */
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 9%;
-    --border: 240 6% 90%;
-    --border-subtle: 240 5% 95%;
-    --input: 240 6% 96%;
-    --ring: 217 91% 60%;
+    --background: var(--bg);
+    --foreground: var(--text);
+    --surface: var(--card);
+    --surface-elevated: 25 30 38; /* #191E26 */
+    --surface-hover: 30 37 45; /* #1E252D */
     
-    /* Legacy shadcn compatibility */
-    --primary: 217 91% 60%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 240 6% 96%;
-    --secondary-foreground: 240 10% 9%;
-    --muted: 240 6% 96%;
-    --muted-foreground: 240 6% 48%;
-    --accent: 217 85% 96%;
-    --accent-foreground: 217 91% 60%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 9%;
+    /* Legacy shadcn compatibility - dark mode values */
+    --primary: var(--accent);
+    --primary-foreground: var(--bg);
+    --secondary: var(--muted);
+    --secondary-foreground: var(--text);
+    --destructive: var(--error);
+    --destructive-foreground: var(--bg);
+    --muted: var(--muted);
+    --muted-foreground: var(--text-muted);
+    --accent-compat: var(--muted);
+    --accent-foreground: var(--text);
+    --popover: var(--card);
+    --popover-foreground: var(--text);
+    --card: var(--card);
+    --card-foreground: var(--text);
+    --border: var(--border);
+    --input: var(--muted);
+    --ring: var(--accent);
     
-    /* Spacing & sizing */
+    /* Spacing & styling */
     --radius: 1rem;
     --radius-sm: 0.75rem;
     --radius-lg: 1.25rem;
     --radius-xl: 1.5rem;
     
-    /* Animation easing */
-    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    /* Typography scale */
+    --text-display: clamp(1.75rem, 3.4vw, 2.75rem);
+    --text-h2: clamp(1.375rem, 2.4vw, 1.75rem);
+    --text-body: clamp(0.875rem, 1.3vw, 1rem);
+    --text-meta: 0.75rem;
     
-    /* Gradients */
-    --gradient-electric: linear-gradient(135deg, hsl(var(--electric)), hsl(var(--electric-bright)));
-    --gradient-surface: linear-gradient(180deg, hsl(var(--surface)), hsl(var(--surface-elevated)));
-    --gradient-glow: radial-gradient(circle at center, hsl(var(--electric-glow) / 0.15), transparent 70%);
-    
-    /* Shadows */
-    --shadow-sm: 0 1px 2px 0 hsl(240 10% 9% / 0.05);
-    --shadow: 0 1px 3px 0 hsl(240 10% 9% / 0.1), 0 1px 2px -1px hsl(240 10% 9% / 0.1);
-    --shadow-md: 0 4px 6px -1px hsl(240 10% 9% / 0.1), 0 2px 4px -2px hsl(240 10% 9% / 0.1);
-    --shadow-lg: 0 10px 15px -3px hsl(240 10% 9% / 0.1), 0 4px 6px -4px hsl(240 10% 9% / 0.1);
-    --shadow-xl: 0 20px 25px -5px hsl(240 10% 9% / 0.1), 0 8px 10px -6px hsl(240 10% 9% / 0.1);
-    --shadow-glow: 0 0 20px hsl(var(--electric-glow) / 0.3);
+    /* Shadows - subtle for dark mode */
+    --shadow-sm: 0 1px 2px hsl(0 0% 0% / 0.2);
+    --shadow: 0 1px 3px hsl(0 0% 0% / 0.3), 0 1px 2px hsl(0 0% 0% / 0.2);
+    --shadow-lg: 0 8px 24px hsl(0 0% 0% / 0.4);
+    --ring-subtle: 0 0 0 1px hsl(var(--text) / 0.1);
   }
 
-  .dark {
-    /* Dark mode palette */
-    --background: 240 10% 4%;
-    --foreground: 0 0% 98%;
+  /* Light mode overrides (optional, keeping dark as default) */
+  .light {
+    --bg: 250 250 251; /* #FAFAFB */
+    --card: 255 255 255; /* #FFFFFF */
+    --muted: 242 244 247; /* #F2F4F7 */
+    --text: 11 18 32; /* #0B1220 */
+    --text-muted: 71 85 105; /* #475569 */
+    --border: 226 232 240; /* #E2E8F0 */
     
-    /* Dark surfaces */
-    --surface: 240 10% 6%;
-    --surface-elevated: 240 9% 8%;
-    --surface-hover: 240 8% 10%;
+    --background: var(--bg);
+    --foreground: var(--text);
+    --surface: var(--card);
+    --surface-elevated: 248 250 252; /* #F8FAFC */
+    --surface-hover: 241 245 249; /* #F1F5F9 */
     
-    /* Dark text hierarchy */
-    --text-primary: 0 0% 98%;
-    --text-secondary: 240 5% 65%;
-    --text-muted: 240 5% 48%;
-    --text-subtle: 240 6% 32%;
-    
-    /* Electric blue remains vibrant in dark mode */
-    --electric: 217 91% 65%;
-    --electric-bright: 217 100% 70%;
-    --electric-dim: 217 85% 60%;
-    --electric-subtle: 217 91% 8%;
-    --electric-glow: 217 91% 65%;
-    
-    /* Dark semantic colors */
-    --success: 142 71% 55%;
-    --success-subtle: 142 71% 8%;
-    --warning: 38 92% 60%;
-    --warning-subtle: 38 92% 8%;
-    --error: 0 84% 65%;
-    --error-subtle: 0 84% 8%;
-    
-    /* Dark component tokens */
-    --card: 240 10% 6%;
-    --card-foreground: 0 0% 98%;
-    --border: 240 8% 16%;
-    --border-subtle: 240 9% 12%;
-    --input: 240 9% 8%;
-    --ring: 217 91% 65%;
-    
-    /* Dark legacy compatibility */
-    --primary: 217 91% 65%;
-    --primary-foreground: 240 10% 4%;
-    --secondary: 240 9% 8%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 9% 8%;
-    --muted-foreground: 240 5% 65%;
-    --accent: 217 91% 8%;
-    --accent-foreground: 217 91% 65%;
-    --destructive: 0 84% 65%;
-    --destructive-foreground: 240 10% 4%;
-    --popover: 240 10% 6%;
-    --popover-foreground: 0 0% 98%;
-    
-    /* Dark gradients */
-    --gradient-electric: linear-gradient(135deg, hsl(var(--electric)), hsl(var(--electric-bright)));
-    --gradient-surface: linear-gradient(180deg, hsl(var(--surface)), hsl(var(--surface-elevated)));
-    --gradient-glow: radial-gradient(circle at center, hsl(var(--electric-glow) / 0.2), transparent 70%);
-    
-    /* Dark shadows */
-    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.3);
-    --shadow: 0 1px 3px 0 hsl(0 0% 0% / 0.4), 0 1px 2px -1px hsl(0 0% 0% / 0.4);
-    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.4), 0 2px 4px -2px hsl(0 0% 0% / 0.4);
-    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.4), 0 4px 6px -4px hsl(0 0% 0% / 0.4);
-    --shadow-xl: 0 20px 25px -5px hsl(0 0% 0% / 0.4), 0 8px 10px -6px hsl(0 0% 0% / 0.4);
-    --shadow-glow: 0 0 30px hsl(var(--electric-glow) / 0.4);
+    --shadow-sm: 0 1px 1px hsl(16 24 40 / 0.04), 0 8px 24px hsl(16 24 40 / 0.08);
+    --shadow: 0 1px 3px hsl(16 24 40 / 0.1), 0 1px 2px hsl(16 24 40 / 0.06);
+    --shadow-lg: 0 8px 24px hsl(16 24 40 / 0.15);
+    --ring-subtle: 0 0 0 1px hsl(var(--text) / 0.1);
   }
+}
 }
 
 @layer base {
@@ -156,6 +111,12 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  
+  /* Default to dark mode */
+  html {
+    color-scheme: dark;
   }
 }

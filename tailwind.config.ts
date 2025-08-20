@@ -19,9 +19,8 @@ export default {
 		},
 		extend: {
 			colors: {
-				/* Core system colors */
+				/* Dark-first color system */
 				border: 'hsl(var(--border))',
-				'border-subtle': 'hsl(var(--border-subtle))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
@@ -34,36 +33,25 @@ export default {
 					hover: 'hsl(var(--surface-hover))'
 				},
 				
-				/* Text hierarchy */
-				text: {
-					primary: 'hsl(var(--text-primary))',
-					secondary: 'hsl(var(--text-secondary))',
-					muted: 'hsl(var(--text-muted))',
-					subtle: 'hsl(var(--text-subtle))'
+				/* Brand colors */
+				accent: {
+					DEFAULT: 'hsl(var(--accent))',
+					hover: 'hsl(var(--accent-hover))'
 				},
 				
-				/* Electric blue accent system */
-				electric: {
-					DEFAULT: 'hsl(var(--electric))',
-					bright: 'hsl(var(--electric-bright))',
-					dim: 'hsl(var(--electric-dim))',
-					subtle: 'hsl(var(--electric-subtle))',
-					glow: 'hsl(var(--electric-glow))'
-				},
+				/* Category colors */
+				staking: 'hsl(var(--staking))',
+				'liquid-staking': 'hsl(var(--liquid-staking))',
+				liquidity: 'hsl(var(--liquidity))',
+				lending: 'hsl(var(--lending))',
+				perps: 'hsl(var(--perps))',
 				
-				/* Semantic colors */
-				success: {
-					DEFAULT: 'hsl(var(--success))',
-					subtle: 'hsl(var(--success-subtle))'
-				},
-				warning: {
-					DEFAULT: 'hsl(var(--warning))',
-					subtle: 'hsl(var(--warning-subtle))'
-				},
-				error: {
-					DEFAULT: 'hsl(var(--error))',
-					subtle: 'hsl(var(--error-subtle))'
-				},
+				/* Risk colors */
+				'risk-unbonding': 'hsl(var(--risk-unbonding))',
+				'risk-il': 'hsl(var(--risk-il))',
+				'risk-liquidation': 'hsl(var(--risk-liquidation))',
+				'risk-contract': 'hsl(var(--risk-contract))',
+				'risk-oracle': 'hsl(var(--risk-oracle))',
 				
 				/* Legacy shadcn compatibility */
 				primary: {
@@ -83,7 +71,7 @@ export default {
 					foreground: 'hsl(var(--muted-foreground))'
 				},
 				accent: {
-					DEFAULT: 'hsl(var(--accent))',
+					DEFAULT: 'hsl(var(--accent-compat))',
 					foreground: 'hsl(var(--accent-foreground))'
 				},
 				popover: {
@@ -97,29 +85,25 @@ export default {
 			},
 			borderRadius: {
 				lg: 'var(--radius-lg)',
+				xl: 'var(--radius-xl)', 
+				'2xl': 'var(--radius-xl)',
 				md: 'var(--radius)',
-				sm: 'var(--radius-sm)',
-				xl: 'var(--radius-xl)'
+				sm: 'var(--radius-sm)'
 			},
 			fontFamily: {
-				sans: ['Inter', 'system-ui', 'sans-serif']
+				sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif']
 			},
-			transitionTimingFunction: {
-				'out': 'var(--ease-out)',
-				'in-out': 'var(--ease-in-out)'
-			},
-			backgroundImage: {
-				'gradient-electric': 'var(--gradient-electric)',
-				'gradient-surface': 'var(--gradient-surface)',
-				'gradient-glow': 'var(--gradient-glow)'
+			fontSize: {
+				display: 'var(--text-display)',
+				h2: 'var(--text-h2)', 
+				body: 'var(--text-body)',
+				meta: 'var(--text-meta)'
 			},
 			boxShadow: {
 				'sm': 'var(--shadow-sm)',
 				'DEFAULT': 'var(--shadow)',
-				'md': 'var(--shadow-md)',
 				'lg': 'var(--shadow-lg)',
-				'xl': 'var(--shadow-xl)',
-				'glow': 'var(--shadow-glow)'
+				'subtle-ring': 'var(--ring-subtle)'
 			},
 			keyframes: {
 				'accordion-down': {
