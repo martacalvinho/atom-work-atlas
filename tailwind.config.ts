@@ -19,11 +19,53 @@ export default {
 		},
 		extend: {
 			colors: {
+				/* Core system colors */
 				border: 'hsl(var(--border))',
+				'border-subtle': 'hsl(var(--border-subtle))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				
+				/* Surface system */
+				surface: {
+					DEFAULT: 'hsl(var(--surface))',
+					elevated: 'hsl(var(--surface-elevated))',
+					hover: 'hsl(var(--surface-hover))'
+				},
+				
+				/* Text hierarchy */
+				text: {
+					primary: 'hsl(var(--text-primary))',
+					secondary: 'hsl(var(--text-secondary))',
+					muted: 'hsl(var(--text-muted))',
+					subtle: 'hsl(var(--text-subtle))'
+				},
+				
+				/* Electric blue accent system */
+				electric: {
+					DEFAULT: 'hsl(var(--electric))',
+					bright: 'hsl(var(--electric-bright))',
+					dim: 'hsl(var(--electric-dim))',
+					subtle: 'hsl(var(--electric-subtle))',
+					glow: 'hsl(var(--electric-glow))'
+				},
+				
+				/* Semantic colors */
+				success: {
+					DEFAULT: 'hsl(var(--success))',
+					subtle: 'hsl(var(--success-subtle))'
+				},
+				warning: {
+					DEFAULT: 'hsl(var(--warning))',
+					subtle: 'hsl(var(--warning-subtle))'
+				},
+				error: {
+					DEFAULT: 'hsl(var(--error))',
+					subtle: 'hsl(var(--error-subtle))'
+				},
+				
+				/* Legacy shadcn compatibility */
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
@@ -51,22 +93,33 @@ export default {
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
-				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
 				}
 			},
 			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+				lg: 'var(--radius-lg)',
+				md: 'var(--radius)',
+				sm: 'var(--radius-sm)',
+				xl: 'var(--radius-xl)'
+			},
+			fontFamily: {
+				sans: ['Inter', 'system-ui', 'sans-serif']
+			},
+			transitionTimingFunction: {
+				'out': 'var(--ease-out)',
+				'in-out': 'var(--ease-in-out)'
+			},
+			backgroundImage: {
+				'gradient-electric': 'var(--gradient-electric)',
+				'gradient-surface': 'var(--gradient-surface)',
+				'gradient-glow': 'var(--gradient-glow)'
+			},
+			boxShadow: {
+				'sm': 'var(--shadow-sm)',
+				'DEFAULT': 'var(--shadow)',
+				'md': 'var(--shadow-md)',
+				'lg': 'var(--shadow-lg)',
+				'xl': 'var(--shadow-xl)',
+				'glow': 'var(--shadow-glow)'
 			},
 			keyframes: {
 				'accordion-down': {

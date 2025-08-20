@@ -1,0 +1,296 @@
+[
+  {
+    "id": "cosmoshub-native-staking",
+    "category": "Staking",
+    "protocol": "Cosmos Hub",
+    "chain": "Cosmos Hub",
+    "assets": ["ATOM"],
+    "action": "Delegate",
+    "risks": ["Unbonding (≈21d)", "Slashing"],
+    "description": "Delegate ATOM to validators on Cosmos Hub; earn staking rewards; 21‑day unbonding.",
+    "links": {
+      "docs": "https://hub.cosmos.network/",
+      "learn": "https://hub.cosmos.network/main/delegators/",
+      "app": "https://www.keplr.app/"
+    },
+    "howTo": [
+      "Install a Cosmos wallet (Keplr/Leap/Cosmostation)",
+      "Transfer ATOM to Cosmos Hub (IBC if needed)",
+      "Choose validators and delegate",
+      "Claim/redelegate periodically as desired"
+    ]
+  },
+  {
+    "id": "stride-statom",
+    "category": "Liquid Staking",
+    "protocol": "Stride",
+    "chain": "Stride",
+    "assets": ["ATOM", "stATOM"],
+    "action": "Mint LST",
+    "risks": ["Smart‑contract", "Peg/Oracle"],
+    "description": "Deposit ATOM on Stride to mint stATOM (auto‑compounding exchange‑rate token).",
+    "links": {
+      "docs": "https://docs.stride.zone/",
+      "app": "https://app.stride.zone/",
+      "learn": "https://docs.stride.zone/docs/stake/atom/"
+    },
+    "howTo": [
+      "Connect wallet to Stride",
+      "Deposit ATOM → receive stATOM",
+      "Use stATOM in LP/lending or hold",
+      "Redeem (unbond) or swap on DEX for exit"
+    ]
+  },
+  {
+    "id": "pstake-stkatom",
+    "category": "Liquid Staking",
+    "protocol": "pSTAKE",
+    "chain": "Persistence/IBC",
+    "assets": ["ATOM", "stkATOM"],
+    "action": "Mint LST",
+    "risks": ["Smart‑contract", "Peg/Oracle"],
+    "description": "Stake via pSTAKE to receive stkATOM (exchange‑rate token; instant or standard redemption).",
+    "links": {
+      "docs": "https://pstake.finance/",
+      "app": "https://cosmos.pstake.finance/",
+      "learn": "https://blog.pstake.finance/"
+    },
+    "howTo": [
+      "Connect wallet",
+      "Deposit ATOM → receive stkATOM",
+      "Use stkATOM in LP/lending",
+      "Exit via swap or redeem (unbond)"
+    ]
+  },
+  {
+    "id": "quicksilver-qatom",
+    "category": "Liquid Staking",
+    "protocol": "Quicksilver",
+    "chain": "Quicksilver",
+    "assets": ["ATOM", "qATOM"],
+    "action": "Mint LST",
+    "risks": ["Smart‑contract", "Peg/Oracle"],
+    "description": "Mint qATOM via Quicksilver (ICA delegation; redemption‑rate accrual).",
+    "links": {
+      "docs": "https://docs.quicksilver.zone/",
+      "app": "https://app.quicksilver.zone/",
+      "learn": "https://docs.quicksilver.zone/overview/"
+    },
+    "howTo": [
+      "IBC transfer ATOM to Quicksilver",
+      "Mint qATOM",
+      "Use qATOM in DeFi or hold",
+      "Redeem (unbond) or trade on DEX"
+    ]
+  },
+  {
+    "id": "osmosis-pool-1-atom-osmo",
+    "category": "Liquidity",
+    "protocol": "Osmosis",
+    "chain": "Osmosis",
+    "assets": ["ATOM", "OSMO"],
+    "action": "Provide Liquidity",
+    "risks": ["Impermanent Loss", "Smart‑contract"],
+    "description": "Classic ATOM/OSMO weighted pool (#1). Earn swap fees; optional incentives/lockups.",
+    "links": {
+      "app": "https://app.osmosis.zone/pool/1",
+      "docs": "https://docs.osmosis.zone/",
+      "learn": "https://docs.osmosis.zone/overview/amm/"
+    },
+    "howTo": [
+      "Fund ATOM + OSMO on Osmosis",
+      "Add liquidity to Pool #1",
+      "(Optional) Lock LP tokens",
+      "Monitor IL and fees"
+    ]
+  },
+  {
+    "id": "osmosis-pool-1283-atom-statom",
+    "category": "Liquidity",
+    "protocol": "Osmosis",
+    "chain": "Osmosis",
+    "assets": ["ATOM", "stATOM"],
+    "action": "Provide Liquidity",
+    "risks": ["Impermanent Loss", "Smart‑contract", "Peg"],
+    "description": "ATOM/stATOM pool (#1283), low fee tier; earn fees on peg balancing trades.",
+    "links": {
+      "app": "https://app.osmosis.zone/pool/1283",
+      "docs": "https://docs.osmosis.zone/",
+      "learn": "https://docs.osmosis.zone/overview/amm/"
+    },
+    "howTo": [
+      "Fund ATOM + stATOM on Osmosis",
+      "Add liquidity to Pool #1283",
+      "Track stATOM peg and volume",
+      "Withdraw/compound periodically"
+    ]
+  },
+  {
+    "id": "osmosis-pool-1282-atom-usdc",
+    "category": "Liquidity",
+    "protocol": "Osmosis",
+    "chain": "Osmosis",
+    "assets": ["ATOM", "USDC"],
+    "action": "Provide Liquidity",
+    "risks": ["Impermanent Loss", "Smart‑contract"],
+    "description": "ATOM/USDC pool (#1282). Higher IL potential vs stable; fees may compensate.",
+    "links": {
+      "app": "https://app.osmosis.zone/pool/1282",
+      "docs": "https://docs.osmosis.zone/",
+      "learn": "https://docs.osmosis.zone/overview/amm/"
+    },
+    "howTo": [
+      "Fund ATOM + USDC on Osmosis",
+      "Add liquidity to Pool #1282",
+      "Consider fee tier vs volatility",
+      "Monitor IL and fees"
+    ]
+  },
+  {
+    "id": "mars-redbank-osmosis",
+    "category": "Lending",
+    "protocol": "Mars Protocol",
+    "chain": "Osmosis",
+    "assets": ["ATOM"],
+    "action": "Supply / Borrow",
+    "risks": ["Liquidation", "Oracle", "Smart‑contract"],
+    "description": "Supply ATOM to earn variable rate or borrow against ATOM on Mars (Osmosis outpost).",
+    "links": {
+      "app": "https://app.marsprotocol.io/",
+      "docs": "https://docs.marsprotocol.io/",
+      "learn": "https://blog.marsprotocol.io/"
+    },
+    "howTo": [
+      "Open Mars on Osmosis",
+      "Supply ATOM to Red Bank",
+      "(Optional) Enable as collateral & borrow",
+      "Monitor LTV to avoid liquidation"
+    ]
+  },
+  {
+    "id": "mars-redbank-neutron",
+    "category": "Lending",
+    "protocol": "Mars Protocol",
+    "chain": "Neutron",
+    "assets": ["ATOM"],
+    "action": "Supply / Borrow",
+    "risks": ["Liquidation", "Oracle", "Smart‑contract"],
+    "description": "Supply/borrow ATOM on Mars (Neutron outpost).",
+    "links": {
+      "app": "https://app.marsprotocol.io/",
+      "docs": "https://docs.marsprotocol.io/",
+      "learn": "https://blog.marsprotocol.io/"
+    },
+    "howTo": [
+      "Switch Mars to Neutron network",
+      "Supply ATOM",
+      "Borrow conservatively",
+      "Track health factor"
+    ]
+  },
+  {
+    "id": "ux-umee-atom-market",
+    "category": "Lending",
+    "protocol": "UX (Umee)",
+    "chain": "UX",
+    "assets": ["ATOM"],
+    "action": "Supply / Borrow",
+    "risks": ["Liquidation", "Oracle", "Smart‑contract"],
+    "description": "Supply or borrow ATOM on UX money markets (cross‑chain friendly).",
+    "links": {
+      "app": "https://app.ux.xyz/",
+      "docs": "https://docs.ux.xyz/",
+      "learn": "https://docs.ux.xyz/"
+    },
+    "howTo": [
+      "Open UX App",
+      "Deposit ATOM",
+      "Optionally enable collateral & borrow",
+      "Maintain healthy LTV"
+    ]
+  },
+  {
+    "id": "kujira-ghost-atom",
+    "category": "Lending",
+    "protocol": "Kujira GHOST",
+    "chain": "Kujira",
+    "assets": ["ATOM"],
+    "action": "Supply / Borrow",
+    "risks": ["Liquidation", "Oracle", "Smart‑contract"],
+    "description": "Lend ATOM to earn (xATOM) or borrow with ORCA‑based liquidations.",
+    "links": {
+      "app": "https://ghost.kujira.network/",
+      "docs": "https://docs.kujira.app/",
+      "learn": "https://docs.kujira.app/ghost/overview"
+    },
+    "howTo": [
+      "Open GHOST on Kujira",
+      "Supply ATOM (receive xATOM)",
+      "Borrow vs collateral if needed",
+      "Watch ORCA liquidations"
+    ]
+  },
+  {
+    "id": "dydx-v4-atom-perp",
+    "category": "Perps",
+    "protocol": "dYdX v4",
+    "chain": "dYdX Chain",
+    "assets": ["ATOM"],
+    "action": "Long/Short Perps",
+    "risks": ["Funding", "Liquidation", "Leverage"],
+    "description": "Trade ATOM perpetuals with an on‑chain orderbook (margin, funding, liquidations).",
+    "links": {
+      "app": "https://dydx.exchange/",
+      "docs": "https://dydx.exchange/developers",
+      "learn": "https://help.dydx.trade/"
+    },
+    "howTo": [
+      "Bridge collateral to dYdX Chain",
+      "Open ATOM/USDC perp market",
+      "Use low leverage; set stops",
+      "Monitor funding & margin"
+    ]
+  },
+  {
+    "id": "injective-helix-atom-perp",
+    "category": "Perps",
+    "protocol": "Injective (Helix)",
+    "chain": "Injective",
+    "assets": ["ATOM"],
+    "action": "Long/Short Perps",
+    "risks": ["Funding", "Liquidation", "Leverage"],
+    "description": "Trade ATOM perps on Injective orderbook dApps (e.g., Helix).",
+    "links": {
+      "app": "https://helixapp.com/",
+      "docs": "https://docs.injective.network/",
+      "learn": "https://blog.injective.com/"
+    },
+    "howTo": [
+      "Deposit margin to Injective dApp",
+      "Open ATOM perp market",
+      "Use conservative leverage",
+      "Track funding & risk"
+    ]
+  },
+  {
+    "id": "levana-osmosis-atom-perp",
+    "category": "Perps",
+    "protocol": "Levana",
+    "chain": "Osmosis",
+    "assets": ["ATOM"],
+    "action": "Long/Short Perps",
+    "risks": ["Funding", "Liquidation", "Leverage", "Smart‑contract"],
+    "description": "Trade ATOM perps via Levana on Osmosis (well‑funded model).",
+    "links": {
+      "app": "https://perps.levana.finance/",
+      "docs": "https://docs.levana.finance/",
+      "learn": "https://reflexivityresearch.com/"
+    },
+    "howTo": [
+      "Open Levana on Osmosis",
+      "Select ATOM perp & set leverage",
+      "Place order; set stops",
+      "Monitor margin & funding"
+    ]
+  }
+]
